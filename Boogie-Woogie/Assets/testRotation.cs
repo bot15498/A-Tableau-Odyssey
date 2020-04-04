@@ -23,23 +23,27 @@ public class testRotation : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        speedRotate -= Input.GetAxisRaw("Horizontal") * RotateAcceleration;
+       
+        if(Input.GetAxisRaw("Mouse ScrollWheel") < 0)
+        {
+            speedRotate -=  -1 * RotateAcceleration;
+        } 
+        if(Input.GetAxisRaw("Mouse ScrollWheel") > 0)
+        {
+            speedRotate -= 1 * RotateAcceleration;
+        }
 
-        Debug.Log(Input.GetAxisRaw("Horizontal"));
-        if (Input.GetKey(KeyCode.A) && speedRotate <= rotateSpeed)
+        Debug.Log(Input.GetAxisRaw("Mouse ScrollWheel"));
+
+
+        if (Input.GetAxisRaw("Mouse ScrollWheel") != 0)
         {
             //speedRotate += RotateAcceleration;
             isrotating = true;
             // audioData.Play(1);
 
         }
-        else if (Input.GetKey(KeyCode.D) && speedRotate >= -rotateSpeed)
-        {
-            //speedRotate -= RotateAcceleration;
-            isrotating = true;
-            //audioData.Play(1);
 
-        }
         else
         {
             isrotating = false;
@@ -57,6 +61,7 @@ public class testRotation : MonoBehaviour
             }
         }
 
-        rb2D.MoveRotation(rb2D.rotation + speedRotate * Time.fixedDeltaTime);
+        rb2D.MoveRotation(rb2D.rotation + speedRotate * Time.deltaTime);
+        //rb2D.AddTorque (speedRotate);
     }
 }
