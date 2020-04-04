@@ -226,8 +226,11 @@ public class WeaponBuilder : MonoBehaviour
 
 		//finally scale down weapon to fit.
 		temp.transform.SetParent(weapon.transform);
+		temp.transform.localPosition = new Vector3(0f, 0f, 0f);
+		temp.transform.localScale = new Vector3(weaponScaling, weaponScaling);
+		temp.tag = "Player";
+		temp.layer = LayerMask.NameToLayer("Player");
 		temp.transform.localRotation = Quaternion.Euler(0, 0, 270);
-		weapon.transform.localScale = new Vector3(weaponScaling, weaponScaling);
 		weapon.SetActive(true);
 
 		this.gameObject.SetActive(false);
