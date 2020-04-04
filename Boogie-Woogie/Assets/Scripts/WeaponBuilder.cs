@@ -30,6 +30,8 @@ public class WeaponBuilder : MonoBehaviour
 	public Sprite whiteSprite;
 	public Sprite redSprite;
 	public Sprite hiltSprite;
+	public List<float> squareDim = new List<float> { 100f, 100f};
+	public List<float> rectDim = new List<float> { 50f, 200f };
 	[SerializeField]
 	private List<GameObject> pieces = new List<GameObject>();
 
@@ -66,74 +68,74 @@ public class WeaponBuilder : MonoBehaviour
 		{
 			case WeaponPieceType.WhiteSquare:
 				//img.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, squareDim[0]);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, squareDim[1]);
 				currImage.sprite = whiteSprite;
 				break;
 			case WeaponPieceType.WhiteRect:
 				//currImage.color = new Color32(255, 255, 255, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 200);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rectDim[0]);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, rectDim[1]);
 				currImage.sprite = whiteSprite;
 				break;
 			case WeaponPieceType.WhiteRectHort:
 				//currImage.color = new Color32(255, 255, 255, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rectDim[1]);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, rectDim[0]);
 				currImage.sprite = whiteSprite;
 				break;
 			case WeaponPieceType.BlueSquare:
 				//currImage.color = new Color32(0, 63, 255, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, squareDim[0]);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, squareDim[1]);
 				currImage.sprite = blueSprite;
 				break;
 			case WeaponPieceType.BlueRect:
 				//currImage.color = new Color32(0, 63, 255, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 200);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rectDim[0]);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, rectDim[1]);
 				currImage.sprite = blueSprite;
 				break;
 			case WeaponPieceType.BlueRectHort:
 				//currImage.color = new Color32(0, 63, 255, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rectDim[1]);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, rectDim[0]);
 				currImage.sprite = blueSprite;
 				break;
 			case WeaponPieceType.YellowSquare:
 				//currImage.color = new Color32(229, 241, 24, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, squareDim[0]);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, squareDim[1]);
 				currImage.sprite = yellowSprite;
 				break;
 			case WeaponPieceType.YellowRect:
 				//currImage.color = new Color32(229, 241, 24, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 200);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rectDim[0]);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, rectDim[1]);
 				currImage.sprite = yellowSprite;
 				break;
 			case WeaponPieceType.YellowRectHort:
 				//currImage.color = new Color32(229, 241, 24, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rectDim[1]);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, rectDim[0]);
 				currImage.sprite = yellowSprite;
 				break;
 			case WeaponPieceType.RedSquare:
 				//currImage.color = new Color32(221, 16, 16, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, squareDim[0]);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, squareDim[1]);
 				currImage.sprite = redSprite;
 				break;
 			case WeaponPieceType.RedRect:
 				//currImage.color = new Color32(221, 16, 16, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 200);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rectDim[0]);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, rectDim[1]);
 				currImage.sprite = redSprite;
 				break;
 			case WeaponPieceType.RedRectHort:
 				//currImage.color = new Color32(221, 16, 16, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rectDim[1]);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, rectDim[0]);
 				currImage.sprite = redSprite;
 				break;
 			default:
