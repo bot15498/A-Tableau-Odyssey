@@ -151,6 +151,8 @@ public class WeaponBuilder : MonoBehaviour
 		}
 		weapon.SetActive(false);
 
+		GameObject temp = new GameObject("tempWeapon");
+
 		// save to weapon game object
 		Vector3 hiltPosInWorld = hilt.transform.position;
 		GameObject hiltReal = new GameObject("hilt");
@@ -169,7 +171,7 @@ public class WeaponBuilder : MonoBehaviour
 		//hiltReal.transform.position = new Vector3(hiltReal.transform.position.x * properScale.x,
 		//											hiltReal.transform.position.y * properScale.y,
 		//											hiltReal.transform.position.z);
-		hiltReal.transform.SetParent(weapon.transform);
+		hiltReal.transform.SetParent(temp.transform);
 
 
 
@@ -195,14 +197,17 @@ public class WeaponBuilder : MonoBehaviour
 				//weaponComponentReal.transform.position = new Vector3(weaponComponentReal.transform.position.x * properWeaponScale.x,
 				//													weaponComponentReal.transform.position.y * properWeaponScale.y,
 				//													weaponComponentReal.transform.position.z);
-				weaponComponentReal.transform.SetParent(weapon.transform);
+				weaponComponentReal.transform.SetParent(temp.transform);
 			}
 		}
 
 		//finally scale down weapon to fit.
+		temp.transform.SetParent(weapon.transform);
+		temp.transform.rotation = Quaternion.Euler(0, 0, -90);
 		weapon.transform.localScale = new Vector3(weaponScaling, weaponScaling);
 		weapon.SetActive(true);
 
+		this.gameObject.SetActive(false);
 	}
 
 	public void ClearWeapon()
