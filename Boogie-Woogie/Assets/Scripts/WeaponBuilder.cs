@@ -150,12 +150,12 @@ public class WeaponBuilder : MonoBehaviour
 		}
 
 		// save to weapon game object
-		Vector3 hiltPosInWorld = Camera.main.ScreenToWorldPoint(hilt.transform.position);
+		Vector3 hiltPosInWorld = hilt.transform.position;
 		GameObject hiltReal = new GameObject("hilt");
 		SpriteRenderer sr = hiltReal.AddComponent<SpriteRenderer>();
 		sr.sprite = hiltSprite;
-		sr.drawMode = SpriteDrawMode.Tiled;
-		hiltReal.transform.localScale = new Vector3(1f, 2f, 0f);
+		sr.drawMode = SpriteDrawMode.Sliced;
+		sr.size = hilt.GetComponent<RectTransform>().sizeDelta;
 		hiltReal.transform.SetParent(weapon.transform);
 
 		for (int i = 0; i < craftingTable.transform.childCount; i++)
@@ -163,11 +163,12 @@ public class WeaponBuilder : MonoBehaviour
 			GameObject uiChild = craftingTable.transform.GetChild(i).gameObject;
 			if (!uiChild.Equals(hilt))
 			{
-				Vector3 diff = Camera.main.ScreenToWorldPoint(uiChild.transform.position) - hiltPosInWorld;
+				Vector3 diff = uiChild.transform.position - hiltPosInWorld;
 				GameObject weaponComponentReal = new GameObject("weaponBlock");
 				SpriteRenderer wsr = weaponComponentReal.AddComponent<SpriteRenderer>();
 				wsr.sprite = uiChild.GetComponent<Image>().sprite;
-				wsr.drawMode = SpriteDrawMode.Tiled;
+				wsr.drawMode = SpriteDrawMode.Sliced;
+				wsr.size = uiChild.GetComponent<RectTransform>().sizeDelta;
 				Debug.Log(diff);
 				weaponComponentReal.transform.localPosition = diff;
 				weaponComponentReal.transform.SetParent(weapon.transform);
