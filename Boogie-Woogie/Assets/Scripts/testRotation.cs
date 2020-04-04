@@ -23,7 +23,8 @@ public class testRotation : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        speedRotate -= Input.GetAxisRaw("Horizontal") * RotateAcceleration;
+
+        speedRotate += Input.GetAxisRaw("Mouse X") * RotateAcceleration;
 
         Debug.Log(Input.GetAxisRaw("Horizontal"));
         if (Input.GetKey(KeyCode.A) && speedRotate <= rotateSpeed)
