@@ -42,10 +42,19 @@ public class PotatoBehavior : MonoBehaviour
         if(foundPlayer == true)
         {
             anim.SetBool("Detected", true);
-            var position = Vector3.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
+            var position = Vector3.MoveTowards(transform.position,new Vector3( Player.transform.position.x,transform.position.y,transform.position.z), speed * Time.deltaTime);
             rb.MovePosition(position);
         }
-
+        if(Player.transform.position.x >= gameObject.transform.position.x)
+        {
+            sr.flipX = true;
+            anim.SetBool("RollingRight", true);
+        }
+        else
+        {
+            sr.flipX = false;
+            anim.SetBool("RollingRight", false);
+        }
 
     }
 
