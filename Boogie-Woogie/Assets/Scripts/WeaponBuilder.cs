@@ -66,74 +66,74 @@ public class WeaponBuilder : MonoBehaviour
 		{
 			case WeaponPieceType.WhiteSquare:
 				//img.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 200);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
 				currImage.sprite = whiteSprite;
 				break;
 			case WeaponPieceType.WhiteRect:
 				//currImage.color = new Color32(255, 255, 255, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 400);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 200);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
 				currImage.sprite = whiteSprite;
 				break;
 			case WeaponPieceType.WhiteRectHort:
 				//currImage.color = new Color32(255, 255, 255, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 200);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 400);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
 				currImage.sprite = whiteSprite;
 				break;
 			case WeaponPieceType.BlueSquare:
 				//currImage.color = new Color32(0, 63, 255, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 200);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
 				currImage.sprite = blueSprite;
 				break;
 			case WeaponPieceType.BlueRect:
 				//currImage.color = new Color32(0, 63, 255, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 400);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 200);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
 				currImage.sprite = blueSprite;
 				break;
 			case WeaponPieceType.BlueRectHort:
 				//currImage.color = new Color32(0, 63, 255, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 200);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 400);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
 				currImage.sprite = blueSprite;
 				break;
 			case WeaponPieceType.YellowSquare:
 				//currImage.color = new Color32(229, 241, 24, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 200);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
 				currImage.sprite = yellowSprite;
 				break;
 			case WeaponPieceType.YellowRect:
 				//currImage.color = new Color32(229, 241, 24, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 400);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 200);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
 				currImage.sprite = yellowSprite;
 				break;
 			case WeaponPieceType.YellowRectHort:
 				//currImage.color = new Color32(229, 241, 24, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 200);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 400);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
 				currImage.sprite = yellowSprite;
 				break;
 			case WeaponPieceType.RedSquare:
 				//currImage.color = new Color32(221, 16, 16, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 200);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
 				currImage.sprite = redSprite;
 				break;
 			case WeaponPieceType.RedRect:
 				//currImage.color = new Color32(221, 16, 16, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 400);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 200);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
 				currImage.sprite = redSprite;
 				break;
 			case WeaponPieceType.RedRectHort:
 				//currImage.color = new Color32(221, 16, 16, 255);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 200);
-				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 400);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
+				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
 				currImage.sprite = redSprite;
 				break;
 			default:
@@ -160,7 +160,8 @@ public class WeaponBuilder : MonoBehaviour
 		sr.sprite = hiltSprite;
 		sr.drawMode = SpriteDrawMode.Sliced;
 		sr.size = hilt.GetComponent<RectTransform>().sizeDelta;
-		hiltReal.AddComponent<BoxCollider2D>();
+		BoxCollider2D collider = hiltReal.AddComponent<BoxCollider2D>();
+		collider.size = sr.size;
 		hiltReal.layer = LayerMask.NameToLayer("Player");
 		hiltReal.tag = "Player";
 		//Vector3 parentScale = hiltReal.transform.parent.sc
@@ -188,7 +189,8 @@ public class WeaponBuilder : MonoBehaviour
 				wsr.size = uiChild.GetComponent<RectTransform>().sizeDelta;
 				Debug.Log(diff);
 				weaponComponentReal.transform.localPosition = diff;
-				weaponComponentReal.AddComponent<BoxCollider2D>();
+				BoxCollider2D weaponBox = weaponComponentReal.AddComponent<BoxCollider2D>();
+				weaponBox.size = wsr.size;
 				weaponComponentReal.layer = LayerMask.NameToLayer("Player");
 				weaponComponentReal.tag = "Player";
 				//Vector3 weaponScale = weaponComponentReal.transform.lossyScale;
