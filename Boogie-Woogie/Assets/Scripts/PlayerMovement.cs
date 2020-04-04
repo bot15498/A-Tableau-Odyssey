@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         if (GroundInfo.collider != null && GroundInfo.transform.tag == "Ground")
         {
             //Debug.Log("nearground");
-            NearGround = true;
+            
             //DO CIRCLE CAST
         }
 
@@ -83,5 +83,10 @@ public class PlayerMovement : MonoBehaviour
             facingRight = false;
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        NearGround = true;
     }
 }
