@@ -21,6 +21,7 @@ public enum WeaponPieceType
 
 public class WeaponBuilder : MonoBehaviour
 {
+	public float weaponScaling = 0.03f;
 	public GameObject craftingTable;
 	public GameObject hilt;
 	public GameObject weapon;
@@ -148,6 +149,7 @@ public class WeaponBuilder : MonoBehaviour
 		{
 			Destroy(weapon.transform.GetChild(i).gameObject);
 		}
+		weapon.SetActive(false);
 
 		// save to weapon game object
 		Vector3 hiltPosInWorld = hilt.transform.position;
@@ -156,7 +158,20 @@ public class WeaponBuilder : MonoBehaviour
 		sr.sprite = hiltSprite;
 		sr.drawMode = SpriteDrawMode.Sliced;
 		sr.size = hilt.GetComponent<RectTransform>().sizeDelta;
+		hiltReal.AddComponent<BoxCollider2D>();
+		hiltReal.layer = LayerMask.NameToLayer("Player");
+		hiltReal.tag = "Player";
+		//Vector3 parentScale = hiltReal.transform.parent.sc
+		//Vector3 scale = new Vector3(hiltReal.transform.localScale.x, hiltReal.transform.localScale.y);
+		//Debug.Log("Hilt real scale: " + scale);
+		//Vector3 properScale = new Vector3(1 / scale.x, 1 / scale.y, 0);
+		//hiltReal.transform.localScale = properScale;
+		//hiltReal.transform.position = new Vector3(hiltReal.transform.position.x * properScale.x,
+		//											hiltReal.transform.position.y * properScale.y,
+		//											hiltReal.transform.position.z);
 		hiltReal.transform.SetParent(weapon.transform);
+
+
 
 		for (int i = 0; i < craftingTable.transform.childCount; i++)
 		{
@@ -171,9 +186,23 @@ public class WeaponBuilder : MonoBehaviour
 				wsr.size = uiChild.GetComponent<RectTransform>().sizeDelta;
 				Debug.Log(diff);
 				weaponComponentReal.transform.localPosition = diff;
+				weaponComponentReal.AddComponent<BoxCollider2D>();
+				weaponComponentReal.layer = LayerMask.NameToLayer("Player");
+				weaponComponentReal.tag = "Player";
+				//Vector3 weaponScale = weaponComponentReal.transform.lossyScale;
+				//Vector3 properWeaponScale = new Vector3(1 / weaponScale.x, 1 / weaponScale.y, 0);
+				//weaponComponentReal.transform.localScale = properWeaponScale;
+				//weaponComponentReal.transform.position = new Vector3(weaponComponentReal.transform.position.x * properWeaponScale.x,
+				//													weaponComponentReal.transform.position.y * properWeaponScale.y,
+				//													weaponComponentReal.transform.position.z);
 				weaponComponentReal.transform.SetParent(weapon.transform);
 			}
 		}
+
+		//finally scale down weapon to fit.
+		weapon.transform.localScale = new Vector3(weaponScaling, weaponScaling);
+		weapon.SetActive(true);
+
 	}
 
 	public void ClearWeapon()

@@ -1247,6 +1247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a031bfced45ab994eb94c94bd1dd5099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponScaling: 0.008
   craftingTable: {fileID: 5210535635652511583}
   hilt: {fileID: 5210535635845559904}
   weapon: {fileID: 1139588903}
@@ -2645,7 +2646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &5210535635378354114
 GameObject:
   m_ObjectHideFlags: 0
