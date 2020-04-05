@@ -65,6 +65,7 @@ public class WeaponBuilder : MonoBehaviour
 		Image currImage = img.AddComponent<Image>();
 		img.transform.SetParent(craftingTable.transform);
 		img.transform.localPosition = new Vector3(0, 0, 0);
+		img.transform.localScale = new Vector3(1f, 1f, 1f);
 		img.AddComponent<ClickAndDrag>();
 		currImage.type = Image.Type.Tiled;
 		pieces.Add(img);
