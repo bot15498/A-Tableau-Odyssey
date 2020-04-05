@@ -8,6 +8,9 @@ TagManager:
   - Wall
   - Enemy
   - DeathZone
+  - EnemyBullet
+  - PlayerBullet
+  - TriggerDummy
   layers:
   - Default
   - TransparentFX

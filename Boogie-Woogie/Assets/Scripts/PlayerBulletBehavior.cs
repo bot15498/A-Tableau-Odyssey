@@ -22,6 +22,11 @@ public class PlayerBulletBehavior : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
+		if (collision.gameObject.tag == "Enemy")
+		{
+			if (collision.gameObject.GetComponent<EnemyHealth>() != null)
+				collision.gameObject.GetComponent<EnemyHealth>().takeDamage();
+		}
 		Destroy(gameObject);
 	}
 }
