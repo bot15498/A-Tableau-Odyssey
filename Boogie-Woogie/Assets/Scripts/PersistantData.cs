@@ -7,22 +7,27 @@ public class PersistantData : MonoBehaviour
 	public bool unlockYellow = false;
 	public bool unlockRed = false;
 	public WeaponBuilder builder;
-    void Start()
-    {
+	void Start()
+	{
 		DontDestroyOnLoad(this.gameObject);
-		if (builder == null)
+		builder = FindObjectOfType<WeaponBuilder>();
+		if (builder != null)
 		{
-			builder = FindObjectOfType<WeaponBuilder>();
 			builder.YellowButtons.SetActive(unlockYellow);
 			builder.RedButtons.SetActive(unlockRed);
 		}
-    }
+	}
 
-    void Update()
-    {
+	void Update()
+	{
 		if (builder == null)
 		{
 			builder = FindObjectOfType<WeaponBuilder>();
+			if (builder != null)
+			{
+				builder.YellowButtons.SetActive(unlockYellow);
+				builder.RedButtons.SetActive(unlockRed);
+			}
 		}
 	}
 
