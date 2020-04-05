@@ -237,7 +237,7 @@ public class WeaponBuilder : MonoBehaviour
 		temp.transform.localRotation = Quaternion.Euler(0, 0, 270);
 		weapon.transform.localPosition = new Vector3(0, 0, 0);
 		weapon.SetActive(true);
-
+		Time.timeScale = 1f;
 		this.gameObject.SetActive(false);
 	}
 
@@ -300,21 +300,16 @@ public class WeaponBuilder : MonoBehaviour
 		errorTextBox.color = new Color32(178, 71, 18, 255);
 		errorTextBox.gameObject.SetActive(true);
 		// hold text on screen.
-		float elapsedTime = 0f;
-		while(elapsedTime < duration)
-		{
-			elapsedTime += Time.deltaTime;
-			yield return null;
-		}
+		yield return new WaitForSecondsRealtime(duration);
 
 		// fade out text.
-		elapsedTime = 0f;
+		float elapsedTime = 0f;
 		float fadeOutDuration = 0.5f;
 		while (elapsedTime < fadeOutDuration)
 		{
-			elapsedTime += Time.deltaTime;
+			elapsedTime += 0.01f;
 			errorTextBox.color = Color32.Lerp(new Color32(178, 71, 18, 255), new Color32(178, 71, 18, 0), elapsedTime / fadeOutDuration);
-			yield return null;
+			yield return new WaitForSecondsRealtime(0.01f);
 		}
 		errorTextBox.gameObject.SetActive(false);
 	}
