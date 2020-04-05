@@ -7,12 +7,14 @@ public class Arrow : MonoBehaviour
 	public int damage = 1;
 
 	private Rigidbody2D rb2d;
+	private AudioSource asource;
 
 	// Start is called before the first frame update
 	void Start()
     {
 		rb2d = GetComponent<Rigidbody2D>();
-
+		asource = GetComponent<AudioSource>();
+		asource.Play();
 	}
 
     // Update is called once per frame

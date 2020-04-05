@@ -32,7 +32,7 @@ public class ArcherBehavior : MonoBehaviour
 	{
 		if(fire)
 		{
-			if (currTime > fireRate)
+			if (currTime > fireRate + Random.Range(-0.2f, 0.2f))
 			{
 				Debug.Log(currTime);
 				GameObject spawnedArrow = Instantiate(arrow, transform.position, Quaternion.Euler(0, 0, fireAngle));
