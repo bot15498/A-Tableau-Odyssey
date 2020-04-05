@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private int numberofjumps;
     bool facingRight;
     SpriteRenderer sr;
+    AudioSource asource;
 
 
 
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         NearGround = true;
         facingRight = true;
         sr = GetComponent<SpriteRenderer>();
+        asource = GetComponent<AudioSource>();
     }
 
 
@@ -52,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && NearGround == true)
         {
+            asource.Play();
             rb.velocity = Vector2.up * JumpForce;
             NearGround = false;
         }
