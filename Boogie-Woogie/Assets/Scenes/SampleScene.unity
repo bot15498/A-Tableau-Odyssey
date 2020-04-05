@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -849,7 +849,7 @@ Transform:
   - {fileID: 1722502448}
   - {fileID: 381128661}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &118562704
 GameObject:
@@ -1153,6 +1153,11 @@ MonoBehaviour:
   maxhealth: 1
   deathanimation: {fileID: 1823130034851554662, guid: b7a9fdac7c911bc4db4ac99faf366275,
     type: 3}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!50 &151513299
 Rigidbody2D:
   serializedVersion: 4
@@ -1252,7 +1257,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30.314001}
 --- !u!1 &155330962
 GameObject:
@@ -1299,7 +1304,7 @@ Transform:
   m_Children:
   - {fileID: 1962513129}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &156698165
 GameObject:
@@ -1488,6 +1493,80 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &161283611
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5205260321141553092, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
+        type: 3}
+      propertyPath: m_Name
+      value: CraftingBench (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205260321141553097, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 127.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205260321141553097, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205260321141553097, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205260321141553097, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205260321141553097, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205260321141553097, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205260321141553097, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205260321141553097, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205260321141553097, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205260321141553097, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205260321141553097, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205260321141553096, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
+        type: 3}
+      propertyPath: WeaponBuilderCanvas
+      value: 
+      objectReference: {fileID: 1043133434}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd7c07c3e7227e546a43cb0609d4cdb4, type: 3}
 --- !u!1 &181499885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,17 +1769,17 @@ PrefabInstance:
     - target: {fileID: 5205260321141553097, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.12
+      value: 4.15
       objectReference: {fileID: 0}
     - target: {fileID: 5205260321141553097, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6052866
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 5205260321141553097, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5205260321141553097, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
         type: 3}
@@ -1725,7 +1804,7 @@ PrefabInstance:
     - target: {fileID: 5205260321141553097, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5205260321141553097, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
         type: 3}
@@ -2128,6 +2207,11 @@ MonoBehaviour:
   maxhealth: 1
   deathanimation: {fileID: 1823130034851554662, guid: b7a9fdac7c911bc4db4ac99faf366275,
     type: 3}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!50 &335829763
 Rigidbody2D:
   serializedVersion: 4
@@ -2227,7 +2311,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -109.065}
 --- !u!1 &349040114
 GameObject:
@@ -2558,6 +2642,11 @@ MonoBehaviour:
   maxhealth: 1
   deathanimation: {fileID: 1823130034851554662, guid: b7a9fdac7c911bc4db4ac99faf366275,
     type: 3}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!50 &371463637
 Rigidbody2D:
   serializedVersion: 4
@@ -2657,7 +2746,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -109.065}
 --- !u!1 &381128659
 GameObject:
@@ -3148,6 +3237,11 @@ MonoBehaviour:
   maxhealth: 1
   deathanimation: {fileID: 1823130034851554662, guid: b7a9fdac7c911bc4db4ac99faf366275,
     type: 3}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!50 &444679475
 Rigidbody2D:
   serializedVersion: 4
@@ -3247,7 +3341,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45.684002}
 --- !u!1 &452051785
 GameObject:
@@ -3551,6 +3645,11 @@ MonoBehaviour:
   maxhealth: 1
   deathanimation: {fileID: 1823130034851554662, guid: b7a9fdac7c911bc4db4ac99faf366275,
     type: 3}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!50 &479876787
 Rigidbody2D:
   serializedVersion: 4
@@ -3650,7 +3749,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45.684002}
 --- !u!1 &480378507
 GameObject:
@@ -5139,7 +5238,7 @@ Transform:
   m_LocalScale: {x: 7.6077, y: 7.6077, z: 7.6077}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &568221005
 MonoBehaviour:
@@ -5158,6 +5257,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1962513130}
         m_MethodName: suntransition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1159916751}
+        m_MethodName: ActivateYellow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5428,7 +5538,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &595950028
 MonoBehaviour:
@@ -5848,6 +5958,11 @@ MonoBehaviour:
   maxhealth: 1
   deathanimation: {fileID: 1823130034851554662, guid: b7a9fdac7c911bc4db4ac99faf366275,
     type: 3}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!50 &625823549
 Rigidbody2D:
   serializedVersion: 4
@@ -5947,7 +6062,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45.684002}
 --- !u!1 &643288330
 GameObject:
@@ -7036,7 +7151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &812034766
 MonoBehaviour:
@@ -7640,7 +7755,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30.314001}
 --- !u!70 &839958941
 CapsuleCollider2D:
@@ -7694,6 +7809,11 @@ MonoBehaviour:
   maxhealth: 1
   deathanimation: {fileID: 1823130034851554662, guid: b7a9fdac7c911bc4db4ac99faf366275,
     type: 3}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &845914033
 GameObject:
   m_ObjectHideFlags: 0
@@ -8003,6 +8123,7 @@ GameObject:
   - component: {fileID: 849376571}
   - component: {fileID: 849376576}
   - component: {fileID: 849376577}
+  - component: {fileID: 849376578}
   m_Layer: 0
   m_Name: potat_idle_1
   m_TagString: Enemy
@@ -8127,7 +8248,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &849376576
 MonoBehaviour:
@@ -8160,6 +8281,25 @@ MonoBehaviour:
   maxhealth: 5
   deathanimation: {fileID: 1823130034851554662, guid: b7a9fdac7c911bc4db4ac99faf366275,
     type: 3}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &849376578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849376570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eadf240adde8672409a9be61d18a7168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  knockBackForce: 10000
 --- !u!1 &881236717
 GameObject:
   m_ObjectHideFlags: 0
@@ -8462,6 +8602,11 @@ MonoBehaviour:
   maxhealth: 1
   deathanimation: {fileID: 1823130034851554662, guid: b7a9fdac7c911bc4db4ac99faf366275,
     type: 3}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!50 &900755404
 Rigidbody2D:
   serializedVersion: 4
@@ -8561,7 +8706,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45.684002}
 --- !u!1 &912842483
 GameObject:
@@ -8699,7 +8844,7 @@ Transform:
   m_LocalScale: {x: 0.090234384, y: 0.45, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &914982187
 Animator:
@@ -9089,6 +9234,11 @@ MonoBehaviour:
   maxhealth: 1
   deathanimation: {fileID: 1823130034851554662, guid: b7a9fdac7c911bc4db4ac99faf366275,
     type: 3}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!50 &930335901
 Rigidbody2D:
   serializedVersion: 4
@@ -9188,7 +9338,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30.314001}
 --- !u!1 &939359405
 GameObject:
@@ -9331,7 +9481,7 @@ Transform:
   - {fileID: 822830178}
   - {fileID: 2107591066}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &952735655
 GameObject:
@@ -9368,6 +9518,11 @@ MonoBehaviour:
   maxhealth: 1
   deathanimation: {fileID: 1823130034851554662, guid: b7a9fdac7c911bc4db4ac99faf366275,
     type: 3}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!50 &952735657
 Rigidbody2D:
   serializedVersion: 4
@@ -9467,7 +9622,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -109.065}
 --- !u!1 &981702385
 GameObject:
@@ -9584,6 +9739,11 @@ MonoBehaviour:
   maxhealth: 1
   deathanimation: {fileID: 1823130034851554662, guid: b7a9fdac7c911bc4db4ac99faf366275,
     type: 3}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!50 &986319885
 Rigidbody2D:
   serializedVersion: 4
@@ -9683,7 +9843,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45.684002}
 --- !u!1 &1008344066
 GameObject:
@@ -9880,6 +10040,11 @@ MonoBehaviour:
   maxhealth: 1
   deathanimation: {fileID: 1823130034851554662, guid: b7a9fdac7c911bc4db4ac99faf366275,
     type: 3}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!50 &1030460435
 Rigidbody2D:
   serializedVersion: 4
@@ -9979,7 +10144,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30.314001}
 --- !u!1001 &1043133432
 PrefabInstance:
@@ -10709,6 +10874,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1159916749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1159916750}
+  - component: {fileID: 1159916751}
+  m_Layer: 0
+  m_Name: PersistantData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1159916750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159916749}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.268341, y: 2.9116561, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 36
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1159916751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159916749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49c9764650c15a84e8b035a1657a8235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockYellow: 0
+  unlockRed: 0
+  builder: {fileID: 0}
 --- !u!1 &1185285598
 GameObject:
   m_ObjectHideFlags: 0
@@ -10737,7 +10948,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1190963292
 GameObject:
@@ -10865,7 +11076,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1190963297
 MonoBehaviour:
@@ -11287,7 +11498,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 7
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
@@ -11402,7 +11613,7 @@ Transform:
   - {fileID: 912842484}
   - {fileID: 929245358}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1244947688
 MonoBehaviour:
@@ -12574,6 +12785,11 @@ MonoBehaviour:
   maxhealth: 1
   deathanimation: {fileID: 1823130034851554662, guid: b7a9fdac7c911bc4db4ac99faf366275,
     type: 3}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!50 &1435463278
 Rigidbody2D:
   serializedVersion: 4
@@ -12673,7 +12889,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -109.065}
 --- !u!1 &1441747174
 GameObject:
@@ -12961,7 +13177,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1454825916
 MonoBehaviour:
@@ -13147,7 +13363,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1488335490
 GameObject:
@@ -13452,7 +13668,7 @@ Transform:
   - {fileID: 772002412}
   - {fileID: 1730318677}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1530428181
 GameObject:
@@ -14146,7 +14362,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1630978596
 GameObject:
@@ -14263,6 +14479,11 @@ MonoBehaviour:
   maxhealth: 1
   deathanimation: {fileID: 1823130034851554662, guid: b7a9fdac7c911bc4db4ac99faf366275,
     type: 3}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!50 &1633833751
 Rigidbody2D:
   serializedVersion: 4
@@ -14362,7 +14583,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45.684002}
 --- !u!1 &1640654390
 GameObject:
@@ -14746,6 +14967,11 @@ MonoBehaviour:
   maxhealth: 1
   deathanimation: {fileID: 1823130034851554662, guid: b7a9fdac7c911bc4db4ac99faf366275,
     type: 3}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!50 &1680830696
 Rigidbody2D:
   serializedVersion: 4
@@ -14845,7 +15071,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -109.065}
 --- !u!1 &1716867823
 GameObject:
@@ -16749,6 +16975,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxhealth: 215
   deathanimation: {fileID: 0}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!212 &1962513128
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16999,7 +17230,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2023656809
 GameObject:
@@ -17196,6 +17427,11 @@ MonoBehaviour:
   maxhealth: 1
   deathanimation: {fileID: 1823130034851554662, guid: b7a9fdac7c911bc4db4ac99faf366275,
     type: 3}
+  deathevent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!50 &2042121111
 Rigidbody2D:
   serializedVersion: 4
@@ -17295,7 +17531,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -109.065}
 --- !u!1 &2042531821
 GameObject:
@@ -18098,7 +18334,7 @@ RectTransform:
   - {fileID: 1043133433}
   - {fileID: 69545201}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
