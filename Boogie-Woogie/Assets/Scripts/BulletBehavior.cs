@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletBehavior : MonoBehaviour
 {
     public float speed;
+	//public int damage = 1;
 
     private Transform player;
     private Vector2 target;
@@ -28,7 +29,10 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("collision");
+        if(collision.gameObject.tag == "Player" && collision.gameObject.GetComponentInParent<YellowBlock>() == null)
+		{
+			collision.gameObject.GetComponentInParent<PlayerStats>().TakeDamage(damage);
+		}
         Destroy(gameObject);
     }
 
