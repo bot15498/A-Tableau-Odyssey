@@ -87,6 +87,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        NearGround = true;
+		Collider2D actual = collision.GetContact(0).collider;
+		if (actual.gameObject.tag != "Wall")
+		{
+			NearGround = true;
+		}
     }
 }
