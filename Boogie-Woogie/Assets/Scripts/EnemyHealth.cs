@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class EnemyHealth : MonoBehaviour
 {
     public float maxhealth;
     private float currenthealth;
     public GameObject deathanimation;
+    public UnityEvent deathevent;
     SpriteRenderer sr;
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,14 @@ public class EnemyHealth : MonoBehaviour
     }
     void die()
     {
-        Instantiate(deathanimation, transform.position, Quaternion.identity);
+        if (deathanimation != null)
+        {
+            Instantiate(deathanimation, transform.position, Quaternion.identity);
+        }
+        if(deathevent != null)
+        {
+            deathevent.Invoke();
+        }
         Destroy(gameObject);
     }
 
