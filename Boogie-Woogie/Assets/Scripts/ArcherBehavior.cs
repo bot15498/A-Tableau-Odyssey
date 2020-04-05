@@ -22,7 +22,7 @@ public class ArcherBehavior : MonoBehaviour
 		if(currTime > fireRate)
 		{
 			GameObject spawnedArrow = Instantiate(arrow, transform.position, Quaternion.Euler(0, 0, fireAngle));
-			spawnedArrow.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1f, 1f));
+			spawnedArrow.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Sin(Mathf.Deg2Rad * fireAngle), Mathf.Cos(Mathf.Deg2Rad * fireAngle)) * force);
 			currTime = 0f;
 		}
 		currTime += Time.deltaTime;
