@@ -9,11 +9,13 @@ public class EnemyHealth : MonoBehaviour
     public GameObject deathanimation;
     public UnityEvent deathevent;
     SpriteRenderer sr;
+    AudioSource asource;
     // Start is called before the first frame update
     void Start()
     {
         currenthealth = maxhealth;
-        sr = GetComponent<SpriteRenderer>(); 
+        sr = GetComponent<SpriteRenderer>();
+        asource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,10 +30,12 @@ public class EnemyHealth : MonoBehaviour
     public void takeDamage()
     {
         currenthealth -= 1;
+        asource.Play();
         StartCoroutine(colorChange());
     }
     void die()
     {
+        
         if (deathanimation != null)
         {
             Instantiate(deathanimation, transform.position, Quaternion.identity);
