@@ -15,6 +15,8 @@ public class SunIsPissed : MonoBehaviour
     private Vector2 target;
     Animator anim;
     public float speed;
+    public GameObject playerlight;
+    public GameObject sunlight;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,18 @@ public class SunIsPissed : MonoBehaviour
     {
         follow.enabled = false;
         isPissed = true;
+    }
+
+    public void sunDie()
+    {
+        anim.SetBool("Death", true);
+    }
+
+    public void destroySun()
+    {
+        playerlight.SetActive(true);
+        sunlight.SetActive(false);
+        Destroy(gameObject);
     }
 
     public void suntransition()
