@@ -18,6 +18,10 @@ public class BlueBlock : MonoBehaviour
 
 	public void OnCollisionEnter2D(Collision2D collision)
 	{
-
+        if(collision.gameObject.tag == "Enemy")
+        {
+            if(collision.gameObject.GetComponent<EnemyHealth>() != null)
+            collision.gameObject.GetComponent<EnemyHealth>().takeDamage();
+        }
 	}
 }
