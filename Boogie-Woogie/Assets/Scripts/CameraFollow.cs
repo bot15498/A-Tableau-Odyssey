@@ -8,13 +8,12 @@ public class CameraFollow : MonoBehaviour
     public Transform followTarget;
     public float smoothspeed;
     private Vector3 playerxpos;
-    // Start is called before the first frame update
-    void Start()
+
+	void Start()
     {
         followTarget = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
         playerxpos = new Vector3(followTarget.position.x, followTarget.position.y, 0);

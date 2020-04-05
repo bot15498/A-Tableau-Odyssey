@@ -1508,6 +1508,8 @@ MonoBehaviour:
   craftingTable: {fileID: 4108565785695507312}
   hilt: {fileID: 4108565785486025295}
   weapon: {fileID: 0}
+  RedBullet: {fileID: 8367988431031799003, guid: e9a7a71f8173bcd459d0230b47fd9aed,
+    type: 3}
   errorTextBox: {fileID: 2406396238416070283}
   yellowSprite: {fileID: 21300000, guid: 178fb05608420a9439067110f4b9a8e6, type: 3}
   blueSprite: {fileID: 21300000, guid: 5fa8e133888f2944da516fc4c0e3a27f, type: 3}
