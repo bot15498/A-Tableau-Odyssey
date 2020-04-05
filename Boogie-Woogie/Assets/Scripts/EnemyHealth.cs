@@ -35,12 +35,13 @@ public class EnemyHealth : MonoBehaviour
         if (deathanimation != null)
         {
             Instantiate(deathanimation, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
         if(deathevent != null)
         {
             deathevent.Invoke();
         }
-        Destroy(gameObject);
+        
     }
 
     IEnumerator colorChange()
