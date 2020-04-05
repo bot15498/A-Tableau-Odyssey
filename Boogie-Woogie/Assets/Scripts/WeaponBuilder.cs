@@ -26,6 +26,7 @@ public class WeaponBuilder : MonoBehaviour
 	public GameObject craftingTable;
 	public GameObject hilt;
 	public GameObject weapon;
+	public GameObject RedBullet;
 	public TextMeshProUGUI errorTextBox;
 	public Sprite yellowSprite;
 	public Sprite blueSprite;
@@ -139,21 +140,21 @@ public class WeaponBuilder : MonoBehaviour
 				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, squareDim[0]);
 				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, squareDim[1]);
 				currImage.sprite = redSprite;
-				img.AddComponent<RedBlock>();
+				RedBlock blk = img.AddComponent<RedBlock>();
 				break;
 			case WeaponPieceType.RedRect:
 				//currImage.color = new Color32(221, 16, 16, 255);
 				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rectDim[0]);
 				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, rectDim[1]);
 				currImage.sprite = redSprite;
-				img.AddComponent<RedBlock>();
+				blk = img.AddComponent<RedBlock>();
 				break;
 			case WeaponPieceType.RedRectHort:
 				//currImage.color = new Color32(221, 16, 16, 255);
 				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rectDim[1]);
 				rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, rectDim[0]);
 				currImage.sprite = redSprite;
-				img.AddComponent<RedBlock>();
+				blk = img.AddComponent<RedBlock>();
 				break;
 			default:
 				currImage.color = new Color32(217, 28, 217, 255);
@@ -215,7 +216,8 @@ public class WeaponBuilder : MonoBehaviour
 
 				if (uiChild.GetComponent<RedBlock>() != null)
 				{
-					weaponComponentReal.AddComponent<RedBlock>();
+					RedBlock blk = weaponComponentReal.AddComponent<RedBlock>();
+					blk.RedBullet = RedBullet;
 				}
 				if (uiChild.GetComponent<BlueBlock>() != null)
 				{
@@ -237,7 +239,7 @@ public class WeaponBuilder : MonoBehaviour
 		temp.transform.localRotation = Quaternion.Euler(0, 0, 270);
 		weapon.transform.localPosition = new Vector3(0, 0, 0);
 		weapon.SetActive(true);
-
+		Time.timeScale = 1f;
 		this.gameObject.SetActive(false);
 	}
 
@@ -300,21 +302,16 @@ public class WeaponBuilder : MonoBehaviour
 		errorTextBox.color = new Color32(178, 71, 18, 255);
 		errorTextBox.gameObject.SetActive(true);
 		// hold text on screen.
-		float elapsedTime = 0f;
-		while(elapsedTime < duration)
-		{
-			elapsedTime += Time.deltaTime;
-			yield return null;
-		}
+		yield return new WaitForSecondsRealtime(duration);
 
 		// fade out text.
-		elapsedTime = 0f;
+		float elapsedTime = 0f;
 		float fadeOutDuration = 0.5f;
 		while (elapsedTime < fadeOutDuration)
 		{
-			elapsedTime += Time.deltaTime;
+			elapsedTime += 0.01f;
 			errorTextBox.color = Color32.Lerp(new Color32(178, 71, 18, 255), new Color32(178, 71, 18, 0), elapsedTime / fadeOutDuration);
-			yield return null;
+			yield return new WaitForSecondsRealtime(0.01f);
 		}
 		errorTextBox.gameObject.SetActive(false);
 	}

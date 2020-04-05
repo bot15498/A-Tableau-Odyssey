@@ -18,6 +18,7 @@ public class CraftingBench : MonoBehaviour
 		{
 			WeaponBuilderCanvas.SetActive(true);
 			canBuild = false;
+			Time.timeScale = 0f;
 		}
     }
 
