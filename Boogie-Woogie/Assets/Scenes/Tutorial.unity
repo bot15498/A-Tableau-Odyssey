@@ -473,6 +473,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.9056604
       objectReference: {fileID: 0}
+    - target: {fileID: 5205260321141553096, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
+        type: 3}
+      propertyPath: WeaponBuilderCanvas
+      value: 
+      objectReference: {fileID: 1698029083}
     - target: {fileID: 5205260321141553095, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
         type: 3}
       propertyPath: m_Offset.y
@@ -503,11 +508,6 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 2.3585968
       objectReference: {fileID: 0}
-    - target: {fileID: 5205260321141553096, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
-        type: 3}
-      propertyPath: WeaponBuilderCanvas
-      value: 
-      objectReference: {fileID: 1698029083}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd7c07c3e7227e546a43cb0609d4cdb4, type: 3}
 --- !u!1 &461837292
@@ -1297,7 +1297,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 13.17997}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1308,7 +1308,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.42, y: 0.76}
+  m_Size: {x: 1.42, y: 27.119942}
   m_EdgeRadius: 0
 --- !u!212 &1104208626
 SpriteRenderer:
@@ -1588,7 +1588,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.071299314, y: -13.14804}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1599,7 +1599,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.42, y: 0.76}
+  m_Size: {x: 1.5625987, y: 27.056082}
   m_EdgeRadius: 0
 --- !u!212 &1552629308
 SpriteRenderer:
@@ -2612,7 +2612,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -12.718902}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2623,7 +2623,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.42, y: 0.76}
+  m_Size: {x: 1.42, y: 26.197802}
   m_EdgeRadius: 0
 --- !u!212 &1868903800
 SpriteRenderer:
@@ -2768,7 +2768,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -10.534847}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2779,7 +2779,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.42, y: 0.76}
+  m_Size: {x: 1.42, y: 21.829697}
   m_EdgeRadius: 0
 --- !u!1001 &2033411627
 PrefabInstance:
@@ -2869,6 +2869,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.9056604
       objectReference: {fileID: 0}
+    - target: {fileID: 5205260321141553096, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
+        type: 3}
+      propertyPath: WeaponBuilderCanvas
+      value: 
+      objectReference: {fileID: 1698029083}
     - target: {fileID: 5205260321141553095, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
         type: 3}
       propertyPath: m_Offset.y
@@ -2899,11 +2904,6 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 2.3585968
       objectReference: {fileID: 0}
-    - target: {fileID: 5205260321141553096, guid: cd7c07c3e7227e546a43cb0609d4cdb4,
-        type: 3}
-      propertyPath: WeaponBuilderCanvas
-      value: 
-      objectReference: {fileID: 1698029083}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd7c07c3e7227e546a43cb0609d4cdb4, type: 3}
 --- !u!4 &2033411628 stripped
