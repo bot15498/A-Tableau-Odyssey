@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyDeath : MonoBehaviour
 {
+    public float deathtimer = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class EnemyDeath : MonoBehaviour
 
     IEnumerator DIE()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(deathtimer);
 
         Destroy(gameObject);
     }
