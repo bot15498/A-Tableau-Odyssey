@@ -208,6 +208,7 @@ public class WeaponBuilder : MonoBehaviour
 				weaponComponentReal.layer = LayerMask.NameToLayer("Player");
 				weaponComponentReal.tag = "Player";
 				weaponComponentReal.transform.SetParent(temp.transform);
+				weaponComponentReal.transform.SetAsLastSibling();
 
 				if (uiChild.GetComponent<RedBlock>() != null)
 				{
@@ -242,11 +243,11 @@ public class WeaponBuilder : MonoBehaviour
 		{
 			Destroy(o);
 		}
+		pieces.Clear();
 	}
 
 	private bool CheckValidWeapon()
 	{
-		return true;
 		// check intersections with 
 		List<RectTransform> validPieces = new List<RectTransform> { hilt.GetComponent<RectTransform>() };
 		List<RectTransform> piecesToCheck = new List<RectTransform>();
@@ -254,25 +255,39 @@ public class WeaponBuilder : MonoBehaviour
 		{
 			piecesToCheck.Add(piece.GetComponent<RectTransform>());
 		}
-		foreach(RectTransform piece in piecesToCheck)
+		bool foundDifference = true;
+		while(foundDifference)
 		{
-			foreach(RectTransform validPiece in validPieces)
+			foundDifference = false;
+			List<RectTransform> tempPieceToCheck = new List<RectTransform>(piecesToCheck);
+			List<RectTransform> tempValidPieces = new List<RectTransform>(validPieces);
+			foreach (RectTransform piece in piecesToCheck)
 			{
-				if (!piece.Equals(validPiece))
+				foreach (RectTransform validPiece in validPieces)
 				{
-					Rect rect1 = new Rect(piece.localPosition.x, piece.localPosition.y,
-						piece.rect.width, piece.rect.height);
-					Rect rect2 = new Rect(validPiece.transform.localPosition.x, validPiece.transform.localPosition.y,
-											validPiece.rect.width, validPiece.rect.height);
-					if (rect1.Overlaps(rect2))
+					if (!piece.Equals(validPiece))
 					{
-						validPieces.Add(piece);
-						piecesToCheck.Remove(piece);
+						Rect rect1 = new Rect(piece.localPosition.x - piece.rect.width / 2f, 
+												piece.localPosition.y - piece.rect.height / 2f,
+												piece.rect.width, 
+												piece.rect.height);
+						Rect rect2 = new Rect(validPiece.localPosition.x - validPiece.rect.width / 2f, 
+												validPiece.localPosition.y - validPiece.rect.height / 2f,
+												validPiece.rect.width, 
+												validPiece.rect.height);
+						if (rect1.Overlaps(rect2))
+						{
+							tempValidPieces.Add(piece);
+							tempPieceToCheck.Remove(piece);
+							foundDifference = true;
+						}
 					}
 				}
 			}
+			piecesToCheck = tempPieceToCheck;
+			validPieces = tempValidPieces;
 		}
-		return false;
+		return piecesToCheck.Count == 0;
 	}
 
 	private IEnumerator ShowErrorText(string text, float duration)
