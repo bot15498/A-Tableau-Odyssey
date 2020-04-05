@@ -30,8 +30,6 @@ public class BulletBehavior : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 		Collider2D actual = collision.GetContact(0).collider;
-		Debug.Log("Actual name " + actual.gameObject.name);
-		Debug.Log("Actual name " + actual.gameObject);
 		if (collision.gameObject.tag == "Player" && actual.gameObject.GetComponent<YellowBlock>() == null)
 		{
 			collision.gameObject.GetComponentInParent<PlayerStats>().TakeDamage(damage);

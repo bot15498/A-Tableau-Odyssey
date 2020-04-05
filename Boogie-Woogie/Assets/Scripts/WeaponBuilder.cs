@@ -32,6 +32,8 @@ public class WeaponBuilder : MonoBehaviour
 	public Sprite whiteSprite;
 	public Sprite redSprite;
 	public Sprite hiltSprite;
+	public GameObject YellowButtons;
+	public GameObject RedButtons;
 	public List<float> squareDim = new List<float> { 100f, 100f};
 	public List<float> rectDim = new List<float> { 50f, 200f };
 

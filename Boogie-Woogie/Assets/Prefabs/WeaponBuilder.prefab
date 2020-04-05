@@ -1514,6 +1514,8 @@ MonoBehaviour:
   whiteSprite: {fileID: 21300000, guid: bec17de10b59a7740a4c38b1910c3441, type: 3}
   redSprite: {fileID: 21300000, guid: 5f370f65e09e739448c359f792856787, type: 3}
   hiltSprite: {fileID: 21300000, guid: c5a38b439aa2243419bcb9e21bbe254f, type: 3}
+  YellowButtons: {fileID: 4108565786099943772}
+  RedButtons: {fileID: 4108565785429168407}
   squareDim:
   - 100
   - 100
@@ -1875,7 +1877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4108565785429168406
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2656,7 +2658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4108565786099943775
 RectTransform:
   m_ObjectHideFlags: 0
