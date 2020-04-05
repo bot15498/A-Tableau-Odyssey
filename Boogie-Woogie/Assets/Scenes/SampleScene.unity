@@ -16727,6 +16727,7 @@ GameObject:
   - component: {fileID: 1962513128}
   - component: {fileID: 1962513130}
   - component: {fileID: 1962513131}
+  - component: {fileID: 1962513127}
   m_Layer: 9
   m_Name: Mista Sun
   m_TagString: Untagged
@@ -16734,6 +16735,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1962513127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962513126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df91328c4f4394c4785091026e4d81b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxhealth: 215
+  deathanimation: {fileID: 0}
 --- !u!212 &1962513128
 SpriteRenderer:
   m_ObjectHideFlags: 0
