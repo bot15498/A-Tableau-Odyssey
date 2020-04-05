@@ -13,8 +13,8 @@ public class PersistantData : MonoBehaviour
 		if (builder == null)
 		{
 			builder = FindObjectOfType<WeaponBuilder>();
-			builder.YellowButtons.SetActive(false);
-			builder.RedButtons.SetActive(false);
+			builder.YellowButtons.SetActive(unlockYellow);
+			builder.RedButtons.SetActive(unlockRed);
 		}
     }
 
