@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: de8aa48b5de333f4abc1d29004b65be8
+  - enabled: 1
+    path: Assets/Scenes/Winar.unity
+    guid: e95ca7a705eac004da70cc29e6453df3
   m_configObjects: {}
