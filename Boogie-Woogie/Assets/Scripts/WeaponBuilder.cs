@@ -178,7 +178,7 @@ public class WeaponBuilder : MonoBehaviour
 		GameObject temp = new GameObject("tempWeapon");
 
 		// save to weapon game object
-		Vector3 hiltPosInWorld = hilt.transform.position;
+		Vector3 hiltPosInWorld = hilt.transform.localPosition;
 		GameObject hiltReal = new GameObject("hilt");
 		SpriteRenderer sr = hiltReal.AddComponent<SpriteRenderer>();
 		sr.sprite = hiltSprite;
@@ -196,7 +196,7 @@ public class WeaponBuilder : MonoBehaviour
 			GameObject uiChild = craftingTable.transform.GetChild(i).gameObject;
 			if (!uiChild.Equals(hilt))
 			{
-				Vector3 diff = uiChild.transform.position - hiltPosInWorld;
+				Vector3 diff = uiChild.transform.localPosition - hiltPosInWorld;
 				GameObject weaponComponentReal = new GameObject("weaponBlock");
 				SpriteRenderer wsr = weaponComponentReal.AddComponent<SpriteRenderer>();
 				wsr.sprite = uiChild.GetComponent<Image>().sprite;
@@ -233,6 +233,7 @@ public class WeaponBuilder : MonoBehaviour
 		temp.tag = "Player";
 		temp.layer = LayerMask.NameToLayer("Player");
 		temp.transform.localRotation = Quaternion.Euler(0, 0, 270);
+		weapon.transform.localPosition = new Vector3(0, 0, 0);
 		weapon.SetActive(true);
 
 		this.gameObject.SetActive(false);
